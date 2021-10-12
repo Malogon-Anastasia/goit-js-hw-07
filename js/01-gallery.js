@@ -3,9 +3,9 @@ import { galleryItems } from './gallery-items.js';
 
 // console.log(createImgMarkup(galleryItems));
 const galleryContainer = document.querySelector('.gallery');
-// const galleryMarkup = createImgMarkup(galleryItems)
+const galleryMarkup = createImgMarkup(galleryItems)
 
-// galleryContainer.innerHTML(`beforeend`, galleryMarkup);
+galleryContainer.innerHTML(`beforeend`, galleryMarkup);
 
 function createImgMarkup(galleryItems) {
 return galleryItems.map(({ preview, original, description }) => {
@@ -22,5 +22,5 @@ return galleryItems.map(({ preview, original, description }) => {
 })
 .join('');  
 }
-galleryContainer.innerHTML = createImgMarkup(galleryItems);
+
 
