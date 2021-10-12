@@ -5,7 +5,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryContainer = document.querySelector('.gallery');
 const galleryMarkup = createImgMarkup(galleryItems)
 
-galleryContainer.innerHTML(`beforeend`, galleryMarkup);
+galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 
 function createImgMarkup(galleryItems) {
 return galleryItems.map(({ preview, original, description }) => {
@@ -22,5 +22,4 @@ return galleryItems.map(({ preview, original, description }) => {
 })
 .join('');  
 }
-
 
