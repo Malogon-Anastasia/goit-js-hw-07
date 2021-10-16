@@ -6,6 +6,8 @@ const galleryContainer = document.querySelector('.gallery');
 const galleryMarkup = createImgMarkup(galleryItems)
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
+galleryContainer.addEventListener('click', onGalleryContainerClick);
+
 
 function createImgMarkup(galleryItems) {
 return galleryItems.map(({ preview, original, description }) => {
@@ -23,3 +25,39 @@ return galleryItems.map(({ preview, original, description }) => {
 .join('');  
 }
 
+galleryContainer.addEventListener ('click', onGalleryContainerClick);
+
+function onGalleryContainerClick(evt) {
+    evt.preventDefault();
+
+  const modalOption = {
+    onShow: instance => {
+      document.addEventListener('keydown', onEscPress);
+    },
+
+    onClose: instance => {
+      document.removeEventListener('keydown', onEscPress);
+    },
+    closable: false,
+  };
+    
+const instance = basicLightbox.create(`<img src="${evt.target.dataset.source}">`, modalOption);
+instance.show();
+
+instance.element().addEventListener('click', onLightboxClick);
+
+function onLightboxClick(evt) {
+  if (evt.target.nodeName === 'IMG') {
+    return;
+  }
+
+  instance.close();
+}
+
+
+function onEscPress(evt) {
+    if (evt.keyCode == 27) {
+        instance.close();
+    }
+  }
+}
