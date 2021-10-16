@@ -7,6 +7,7 @@ const galleryMarkup = createImgMarkup(galleryItems)
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 galleryContainer.addEventListener('click', onGalleryContainerClick);
+galleryContainer.addEventListener ('click', onGalleryContainerClick);
 
 
 function createImgMarkup(galleryItems) {
@@ -25,7 +26,6 @@ return galleryItems.map(({ preview, original, description }) => {
 .join('');  
 }
 
-galleryContainer.addEventListener ('click', onGalleryContainerClick);
 
 function onGalleryContainerClick(evt) {
     evt.preventDefault();
