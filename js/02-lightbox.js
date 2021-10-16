@@ -25,7 +25,7 @@ return galleryItems.map(({ preview, original, description }) => {
 
 galleryContainer.addEventListener ('click', onGalleryContainerClick);
 
-var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+let lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 
 function onGalleryContainerClick(evt) {
     evt.preventDefault();
