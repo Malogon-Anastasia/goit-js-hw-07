@@ -23,7 +23,6 @@ return galleryItems.map(({ preview, original, description }) => {
 .join('');  
 }
 
-galleryContainer.addEventListener ('click', onGalleryContainerClick);
 
 let lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 

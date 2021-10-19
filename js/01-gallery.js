@@ -1,17 +1,18 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-// console.log(createImgMarkup(galleryItems));
+console.log(createImgMarkup(galleryItems));
+
 const galleryContainer = document.querySelector('.gallery');
-const galleryMarkup = createImgMarkup(galleryItems)
+const galleryMarkup = createImgMarkup(galleryItems);
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 galleryContainer.addEventListener('click', onGalleryContainerClick);
-galleryContainer.addEventListener ('click', onGalleryContainerClick);
 
 
 function createImgMarkup(galleryItems) {
-return galleryItems.map(({ preview, original, description }) => {
+return galleryItems
+.map(({ preview, original, description }) => {
     return `<div class="gallery__item">
       <a class="gallery__link" href="${original}">
         <img
@@ -38,7 +39,7 @@ function onGalleryContainerClick(evt) {
     onClose: instance => {
       document.removeEventListener('keydown', onEscPress);
     },
-    closable: false,
+    closable: false
   };
     
 const instance = basicLightbox.create(`<img src="${evt.target.dataset.source}">`, modalOption);
