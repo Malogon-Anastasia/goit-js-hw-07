@@ -27,12 +27,6 @@ return galleryItems
 .join('');  
 }
 
-// function onClick(evt) {
-//   if (evt.target.nodeName !== 'IMG'){
-//     return;
-//   }
-// }
-
 function onGalleryContainerClick(evt) {
       evt.preventDefault();
       
