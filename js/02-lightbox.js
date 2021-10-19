@@ -9,7 +9,7 @@ galleryContainer.addEventListener('click', onGalleryContainerClick);
 
 function createImgMarkup(galleryItems) {
 return galleryItems.map(({ preview, original, description }) => {
-    return `<div class="gallery__item">
+    return `<li class="gallery__item">
       <a class="gallery__link" href="${original}">
         <img
           class="gallery__image"
@@ -18,7 +18,7 @@ return galleryItems.map(({ preview, original, description }) => {
           alt="${description}"
         />
       </a>
-    </div>`;
+      </li>`;
 })
 .join('');  
 }
