@@ -33,11 +33,11 @@ function onGalleryContainerClick(evt) {
 
   const modalOption = {
     onShow: instance => {
-      document.addEventListener('keydown', onEscPress);
+      document.addEventListener('keydown', escapeBtn);
     },
 
     onClose: instance => {
-      document.removeEventListener('keydown', onEscPress);
+      document.removeEventListener('keydown', escapeBtn);
     },
     closable: false
   };
@@ -56,7 +56,7 @@ function onLightboxClick(evt) {
 }
 
 
-function onEscPress(evt) {
+function escapeBtn(evt) {
     if (evt.keyCode == 27) {
         instance.close();
     }
